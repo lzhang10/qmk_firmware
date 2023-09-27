@@ -71,8 +71,9 @@ static report_keyboard_t local_keyboard_report;
  * This supports two cascaded hubs and four keyboards
  */
 USB usb_host;
-USBHub hub1(&usb_host);
-USBHub hub2(&usb_host);
+// lzhang: disabling two hubs save 1962 bytes, can save more if disabling kbd2-4
+// USBHub hub1(&usb_host);
+// USBHub hub2(&usb_host);
 HIDBoot<HID_PROTOCOL_KEYBOARD> kbd1(&usb_host);
 HIDBoot<HID_PROTOCOL_KEYBOARD> kbd2(&usb_host);
 HIDBoot<HID_PROTOCOL_KEYBOARD> kbd3(&usb_host);
