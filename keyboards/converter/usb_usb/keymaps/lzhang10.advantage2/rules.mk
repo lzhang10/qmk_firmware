@@ -7,6 +7,8 @@ EXTRAKEY_ENABLE = yes  # Audio control and System control
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 LTO_ENABLE = yes
 
+TAP_DANCE_ENABLE = yes # use 700 bytes
+
 # Easy definition of combos
 VPATH +=  keyboards/gboards/
 

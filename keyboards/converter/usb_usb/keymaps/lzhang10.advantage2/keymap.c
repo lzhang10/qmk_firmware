@@ -5,6 +5,22 @@
 
 #define XXX KC_NO
 
+// Tap Dance declarations https://github.com/qmk/qmk_firmware/blob/master/docs/feature_tap_dance.md
+enum {
+    TD_ESC_CAPS,
+    TD_0_1,
+    TD_CPY_PST,
+};
+
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
+    [TD_0_1] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_1),
+    [TD_CPY_PST] = ACTION_TAP_DANCE_DOUBLE(C(KC_C), C(KC_V)),
+};
+
+
 // character stats: http://xahlee.info/comp/computer_language_char_distribution.html
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_kinesis(
@@ -19,8 +35,8 @@ KC_ESC,  KC_F1,  KC_F2,   KC_F3,  KC_F4,  KC_F5,   KC_F6,   KC_F7,   KC_F8,     
                        CTRL_PGDN, MTLGUI, MTLALT,  MTLSFT,  MTLCTL,  KC_G,        KC_H,    KC_J,    KC_K,    KC_L,    KC_MINS, KC_QUOT,
                   OSM(MOD_LSFT),  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,        KC_N,    MTRCTL,  KC_COMM, KC_DOT,  KC_SLSH, OSM(MOD_RSFT),
                           KC_GRV, KC_BSLS,KC_LEFT, KC_RGHT,                                KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC,
-                                                            KC_TAB, C(KC_C),      LSFT(KC_LGUI),    KC_F12,
-                                                                    C(KC_V),      KC_PGUP,
+                                                            KC_TAB, C(KC_X),      LSFT(KC_LGUI),    KC_F12,
+                                                             TD(TD_CPY_PST),      KC_PGUP,
                                  KC_BSPC,  LT(NUM, KC_ESC),LT(FUN, KC_SCLN),      KC_PGDN, LT(SYM, KC_ENT),LT(NAV, KC_SPC)
   ),
 
