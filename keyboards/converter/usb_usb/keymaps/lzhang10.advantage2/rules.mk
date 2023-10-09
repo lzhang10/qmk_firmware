@@ -1,7 +1,7 @@
 # Have to disable combo after rebasing to c49438feec (Tue Feb 8 21:51:51 2022 -0800) to save space
 # to enable combo rebase to eee553337a (Mon Sep 13 18:01:23 2021), which lacks autoshift finetune and retro shift
 CONSOLE_ENABLE = yes  # This allows you to print messages that can be read using hid_listen.
-COMBO_ENABLE = no
+COMBO_ENABLE = yes    # uses 1800 bytes
 MOUSEKEY_ENABLE = no  # Mouse keys
 EXTRAKEY_ENABLE = yes  # Audio control and System control
 AUTO_SHIFT_ENABLE = yes # Auto Shift

@@ -1,7 +1,16 @@
 // -*- truncate-lines: t; -*-
 #include "advantage2.h"
 #include "layout.h"
+
 #include "my_keycode.h"
+
+#ifdef COMBO_ENABLE
+// qmk doc
+// (https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md#combos)
+// states to put combo in keymap.c. It does not work if put in my_keycode.c
+// (https://github.com/qmk/qmk_firmware/issues/21137)
+#include "g/keymap_combo.h"
+#endif
 
 #define XXX KC_NO
 
@@ -154,3 +163,71 @@ TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,     
 /*                                                                       KC_HOME,    KC_PGUP, */
 /*                                                     KC_BSPC, KC_DEL,  KC_END,     KC_PGDN, KC_ENT, KC_SPC */
 /*   ), */
+
+#ifdef COMBO_ENABLE
+// Combos
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+  switch (index) {
+    // Home-row and other tight combos
+    /* case tab: */
+    /* case escape: */
+  case scln:
+    //case dquo:
+  case coln:
+    /* case enter: */
+    /* case quot: */
+    /* case circ: */
+    /* case dlr: */
+    /* case vsp: */
+    return COMBO_TERM;
+    // Vertical combos, very relaxed
+    /* case small_left_arrow: */
+    /* case lt_eq: */
+    /* case large_right_arrow: */
+    /* case small_right_arrow: */
+    /* case pipe_to: */
+    /* case sp: */
+    /* case gt_eq: */
+    /*     return COMBO_TERM + 55; */
+    // Regular combos, slightly relaxed
+  default:
+    return COMBO_TERM + 25;
+  }
+}
+
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+  switch (index) {
+    /* case del: */
+    /* case backsp: */
+    /* case q_comb: */
+    /* case qu_comb: */
+    /* case z_comb: */
+    /* case num: */
+    /* case sp_ampr: */
+    /* case sp_pipe: */
+    /* case sp_plus: */
+    /* case sp_astr: */
+    /* case sp_mins: */
+    /* case sp_perc: */
+    /* case sp_grv: */
+    /* case sp_labk: */
+    /* case sp_rabk: */
+    /* case sp_lcbr: */
+    /* case sp_bsls: */
+    /* case sp_hash: */
+    /* case rev_rep: */
+    /* case lprn_arng: */
+    /* case rprn_adia: */
+    /* case unds_odia: */
+    /* case eql: */
+    /*     return false; */
+  default:
+    return true;
+  }
+}
+
+/* bool combo_should_trigger(uint16_t combo_index, combo_t *combo) { */
+/*     // FIXME this doesn't seem to work? */
+/*     return true; */
+/* } */
+#endif

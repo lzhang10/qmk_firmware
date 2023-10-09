@@ -3,9 +3,6 @@
 #include "my_keycode.h"
 #include "casemodes.h"
 #include "layermodes.h"
-#ifdef COMBO_ENABLE
-#include "g/keymap_combo.h"
-#endif
 //#include "repeat.h"
 
 /* lower and title capitals versions (setup at start). */
@@ -287,75 +284,6 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 }
-#endif
-
-
-#ifdef COMBO_ENABLE
-// Combos
-uint16_t get_combo_term(uint16_t index, combo_t *combo) {
-  switch (index) {
-    // Home-row and other tight combos
-    /* case tab: */
-    /* case escape: */
-  case scln:
-    //case dquo:
-  case coln:
-    /* case enter: */
-    /* case quot: */
-    /* case circ: */
-    /* case dlr: */
-    /* case vsp: */
-    return COMBO_TERM;
-    // Vertical combos, very relaxed
-    /* case small_left_arrow: */
-    /* case lt_eq: */
-    /* case large_right_arrow: */
-    /* case small_right_arrow: */
-    /* case pipe_to: */
-    /* case sp: */
-    /* case gt_eq: */
-    /*     return COMBO_TERM + 55; */
-    // Regular combos, slightly relaxed
-  default:
-    return COMBO_TERM + 25;
-  }
-}
-
-bool get_combo_must_tap(uint16_t index, combo_t *combo) {
-  switch (index) {
-    /* case del: */
-    /* case backsp: */
-    /* case q_comb: */
-    /* case qu_comb: */
-    /* case z_comb: */
-    /* case num: */
-    /* case sp_ampr: */
-    /* case sp_pipe: */
-    /* case sp_plus: */
-    /* case sp_astr: */
-    /* case sp_mins: */
-    /* case sp_perc: */
-    /* case sp_grv: */
-    /* case sp_labk: */
-    /* case sp_rabk: */
-    /* case sp_lcbr: */
-    /* case sp_bsls: */
-    /* case sp_hash: */
-    /* case rev_rep: */
-    /* case lprn_arng: */
-    /* case rprn_adia: */
-    /* case unds_odia: */
-    /* case eql: */
-    /*     return false; */
-  default:
-    return true;
-  }
-}
-
-/* bool combo_should_trigger(uint16_t combo_index, combo_t *combo) { */
-/*     // FIXME this doesn't seem to work? */
-/*     return true; */
-/* } */
 #endif
 
 #ifdef AUTO_SHIFT_TIMEOUT_PER_KEY
