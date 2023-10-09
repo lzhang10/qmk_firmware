@@ -15,10 +15,11 @@
 // COMB(escape,            KC_ESC,         SE_T, SE_H)
 // COMB(dquo,              SE_DQUO,        SE_S, SE_H)
 // COMB(scln,              SE_SCLN,        SE_S, SE_T, SE_H)
-COMB(scln,              KC_SCLN,        KC_N, LGUI_T(KC_A), LT(SYM, KC_ENT))
+//COMB(scln,              KC_SCLN,        KC_N, LGUI_T(KC_A), LT(SYM, KC_ENT))
+COMB(macro_qf, STR_B,           KC_Q, MTLCTL)
 
 // // Right home row
-COMB(coln,              KC_COLN,        LALT_T(KC_S), KC_H, LT(SYM, KC_ENT))
+//COMB(coln,              KC_COLN,        LALT_T(KC_S), KC_H, LT(SYM, KC_ENT))
 // COMB(coln,              SE_COLN,        SE_N, SE_I)
 // COMB(enter,             KC_ENT,         SE_I, SE_A)
 // COMB(quot,              SE_QUOT,        SE_N, SE_A)
@@ -92,3 +93,4 @@ COMB(coln,              KC_COLN,        LALT_T(KC_S), KC_H, LT(SYM, KC_ENT))
 // //SUBS(turbofish,         "::<>"SS_TAP(X_LEFT),   MT_SPC, SE_COMM)
 // //SUBS(rust_debug,        "{:?}",                 MT_SPC, SE_LPRN)
 // //SUBS(rust_vdebug,       "{:#?}",                MT_SPC, SE_RPRN)
+

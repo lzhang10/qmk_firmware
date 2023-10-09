@@ -171,15 +171,15 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     // Home-row and other tight combos
     /* case tab: */
     /* case escape: */
-  case scln:
+  //case scln:
     //case dquo:
-  case coln:
+  //case coln:
     /* case enter: */
     /* case quot: */
     /* case circ: */
     /* case dlr: */
     /* case vsp: */
-    return COMBO_TERM;
+    //return COMBO_TERM;
     // Vertical combos, very relaxed
     /* case small_left_arrow: */
     /* case lt_eq: */
