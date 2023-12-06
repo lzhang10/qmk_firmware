@@ -64,7 +64,7 @@ CTRL_ALT_DEL,KC_INS,STR_B,STR_C,  TRNS,   TRNS,   TRNS,    TRNS,    TRNS,       
   ),
 
   [NUM] = LAYOUT_kinesis(
-TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
+TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS,   XXX,  XXX,
                         KC_EQL,     KC_1,   KC_2,   KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
                           TRNS,     TRNS,   TRNS,   KC_K,    KC_PERC, KC_J,        TRNS,    TRNS,    KC_DOT,  CAPSWORD,KC_QUOT, TRNS,
                           TRNS,     KC_6,   KC_4,   KC_0,    KC_2,    TRNS,        KC_EQL,  KC_3,    KC_1,    KC_5,    KC_7,    TRNS,
@@ -87,7 +87,7 @@ TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,     
   ),
 
   [FUN] = LAYOUT_kinesis(
-TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        KC_F21,  KC_F22,  KC_F23,  STR_A,   TRNS,    TRNS,   TRNS,   XXX,  XXX,
+TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        KC_F21,  KC_F22,  KC_F23,  STR_A,   TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F12, KC_F7,  KC_F8,   KC_F9,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F11, KC_F4,  KC_F5,   KC_F6,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
@@ -97,13 +97,6 @@ TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,     
                                                                       TRNS,        TRNS,
                                                     TRNS,    TRNS,    TRNS,        TRNS,    TRNS,   TRNS
   ),
-
-  /* [FUN] = LAYOUT_miryoku( */
-  /*   KC_F12,  KC_F7,   KC_F8,   KC_F9,   U_TERM, U_NA, U_NA,    U_NA,    U_NA,    RESET, */
-  /*   KC_F11,  KC_F4,   U_WORK,  U_WEB,   U_MAIL, U_NA,    KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, */
-  /*   KC_F10,  KC_F1,   KC_F2,   KC_F3,   U_EMACS,U_NA,    U_NA,    U_NA,    KC_ALGR, U_NA, */
-  /*   U_NP,    U_NP,    KC_APP,  KC_SPC,  KC_TAB,  U_NA,    U_NA,    U_NA,    U_NP,    U_NP */
-  /* ) */
 
   // MOUSE layer can be disabled to save space:
   // MOUSEKEY_ENABLE = no in rules.mk
