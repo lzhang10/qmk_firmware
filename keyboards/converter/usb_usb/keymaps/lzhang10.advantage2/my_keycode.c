@@ -197,9 +197,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   case MTLGUI:
   case MTRGUI:
     return TAPPING_TERM;
+    // slow down ALT+key to avoid triggering accented letters on mac
   case MTLALT:
-    return TAPPING_TERM + 50;
   case MTRALT:
+    return TAPPING_TERM + 50;
   case MTLSFT:
   case MTRSFT:
     return TAPPING_TERM;

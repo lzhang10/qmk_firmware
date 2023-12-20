@@ -38,7 +38,7 @@
 
 #define MTRCTL RCTL_T(KC_J)
 #define MTRSFT RSFT_T(KC_K)
-#define MTRALT RALT_T(KC_L)
+#define MTRALT LALT_T(KC_L)   // Right ALT (ISO_Level3_Shift) can not trigger M-x for emacs
 #define MTRGUI RGUI_T(KC_MINS)
 
 enum custom_keycodes {
