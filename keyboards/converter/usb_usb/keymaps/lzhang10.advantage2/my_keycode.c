@@ -191,21 +191,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   return res;
 }
+
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case MTLGUI:
-  // case MTRGUI:
+  case MTRGUI:
     return TAPPING_TERM;
   case MTLALT:
-  //case MTRALT:
     return TAPPING_TERM + 50;
+  case MTRALT:
   case MTLSFT:
-    return TAPPING_TERM;
-  //case MTRSFT:
+  case MTRSFT:
     return TAPPING_TERM;
   case MTLCTL:
   case MTRCTL:
-    //return TAPPING_TERM - 30;
     return TAPPING_TERM;
   default:
     return TAPPING_TERM;
@@ -224,7 +223,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   }
   }
 */
-
+/*
 bool get_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
   // disable autoshift for certain vim keys
   // note autoshift is disabled for modtap key automatically
@@ -260,7 +259,7 @@ bool get_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
   }
   return false;
 }
-
+*/
 // Turn off TAPPING_FORCE_HOLD for certain dual function keys
 // to revert to the default auto-repeat behavior for tap-then-hold
 #if 0

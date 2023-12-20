@@ -38,12 +38,13 @@
 //#define TAPPING_FORCE_HOLD_PER_KEY
 
 // Auto Shift
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_auto_shift.md
 // disable certain keys in get_auto_shifted_key()
-#define NO_AUTO_SHIFT_ALPHA
+//#define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP // disable three special keys to adjujst autoshift on the fly
 // #define AUTO_SHIFT_REPEAT // not that useful
-#define AUTO_SHIFT_TIMEOUT_PER_KEY  // need to update to upstream, see get_autoshift_timeout()
+//#define AUTO_SHIFT_TIMEOUT_PER_KEY  // need to update to upstream, see get_autoshift_timeout()
 
 // this is supposed to send shifted letter for mod-tap keys after a time
 // I could not get it to work.

@@ -30,24 +30,16 @@
 // get_auto_shifted_key()
 // get_tapping_term()
 
-#if 1
-// win/linux
+// standard setting for win/linux. Mac needs to swap control/command in OS.
 #define MTLCTL LCTL_T(KC_F)
 #define MTLSFT LSFT_T(KC_D)
 #define MTLALT LALT_T(KC_S)
 #define MTLGUI LGUI_T(KC_A)
-#define MTRCTL LCTL_T(KC_M)
-#endif
 
-#if 0
-// mac
-#define MTLCTL LGUI_T(KC_F)
-#define MTLSFT LSFT_T(KC_D)
-#define MTLALT LALT_T(KC_S)
-#define MTLGUI LCTL_T(KC_A)
-#define MTRCTL RGUI_T(KC_M)
-#define MTRGUI LCTL_T(KC_U)
-#endif
+#define MTRCTL RCTL_T(KC_J)
+#define MTRSFT RSFT_T(KC_K)
+#define MTRALT RALT_T(KC_L)
+#define MTRGUI RGUI_T(KC_MINS)
 
 enum custom_keycodes {
   CTRL_ALT_DEL = SAFE_RANGE,
