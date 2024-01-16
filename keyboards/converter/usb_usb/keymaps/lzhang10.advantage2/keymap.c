@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // unused special key codes: NUMWORD
 // old paste key: S(KC_INS)
-KC_ESC,  KC_F1,  KC_F2,   KC_F3,  KC_F4,  KC_F5,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  WAKE_M32U,KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
+KC_ESC,  KC_F1,  KC_F2,   KC_F3,  KC_F4,  KC_F5,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
                           KC_EQL, KC_1,   KC_2,    KC_3,    KC_4,     KC_5,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
                         CAPSWORD, KC_Q,   KC_W,    KC_E,    KC_R,     KC_T,      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SCLN,
                        CTRL_PGDN, MTLGUI, MTLALT,  MTLSFT,  MTLCTL,   KC_G,      KC_H,    MTRCTL,  MTRSFT,  MTRALT,  MTRGUI,  KC_QUOT,
@@ -87,7 +87,7 @@ TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,     
   ),
 
   [FUN] = LAYOUT_kinesis(
-TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        KC_F21,  KC_F22,  KC_F23,  STR_A,   TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
+TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        KC_F21,  KC_F22,  WAKE_M32U,STR_A,   TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F12, KC_F7,  KC_F8,   KC_F9,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F11, KC_F4,  KC_F5,   KC_F6,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
