@@ -17,5 +17,3 @@ sleep 8 && avrdude -p atmega32u4 -c avr109 -P /dev/ttyACM0 -U flash:w:.build/con
 The above command can be found by adding "make VERBOSE=true" to the make command in util/docker_build.sh
 
 # TODO
-
-switch to native qmk case word implementation
