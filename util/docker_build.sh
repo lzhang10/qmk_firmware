@@ -82,4 +82,4 @@ fi
 	-e SKIP_GIT="$SKIP_GIT" \
 	-e MAKEFLAGS="$MAKEFLAGS" \
 	ghcr.io/qmk/qmk_cli \
-	make "$keyboard${keymap:+:$keymap}${target:+:$target}"
+	make VERBOSE=true "$keyboard${keymap:+:$keymap}${target:+:$target}"

@@ -1,7 +1,7 @@
 #include "advantage2.h"
 #include "secret_var.h"
 #include "my_keycode.h"
-#include "casemodes.h"
+//#include "casemodes.h"
 #include "layermodes.h"
 //#include "repeat.h"
 
@@ -48,10 +48,11 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_num_word(keycode, record)) {
     return false;
   }
+  /*
   if (!process_case_modes(keycode, record)) {
     return false;
   }
-
+*/
   switch (keycode) {
   case TO_NUM:
     layer_on(NUM);
@@ -59,11 +60,11 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
   case NUMWORD:
     process_num_word_activation(record);
     return false;
-  case CAPSWORD:
-    if (record->event.pressed) {
-      enable_caps_word();
-    }
-    return false;
+  // case CAPSWORD:
+  //   if (record->event.pressed) {
+  //     enable_caps_word();
+  //   }
+  //   return false;
   case WAKE_M32U:
     if (record->event.pressed) {
       /* wait up and then sleep for 20 seconds, and then wake it up */

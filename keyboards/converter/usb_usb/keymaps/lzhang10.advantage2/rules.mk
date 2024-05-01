@@ -19,8 +19,9 @@ VPATH +=  keyboards/gboards/
 MAGIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
+CAPS_WORD_ENABLE = yes
 
-SRC += casemodes.c layermodes.c my_keycode.c #repeat.c
+SRC += layermodes.c my_keycode.c #repeat.c
 
 # https://github.com/qmk/qmk_firmware/tree/master/users/spacebarracecar
 #SRC += spacebarracecar.c

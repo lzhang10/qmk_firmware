@@ -33,6 +33,10 @@
 // This however does not work for nav keys of a QWERTY Vim user, use NAV layer for that
 #define TAPPING_FORCE_HOLD
 
+// Activate by double tapping Left Shift
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_caps_word.md#how-do-i-enable-caps-word-idhow-do-i-enable-caps-word
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 // This allows turn off TAPPING_FORCE_HOLD for certain keys such as Backspace
 // For those keys use get_tapping_force_hold() to revert to the default auto-repeat behavior for tap-then-hold
 //#define TAPPING_FORCE_HOLD_PER_KEY
