@@ -1,4 +1,4 @@
-#include "advantage2.h"
+#include "manna-harbour_miryoku.h"
 #include "secret_var.h"
 #include "my_keycode.h"
 //#include "casemodes.h"
