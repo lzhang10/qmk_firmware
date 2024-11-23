@@ -8,7 +8,6 @@ util/docker_build.sh converter/usb_usb/leonardo:lzhang10.magic
 util/docker_build.sh converter/usb_usb/leonardo:lzhang10.magic:flash
 ```
 
-
 # old Apple Magic keyboard support
 
 These are incorporated in current branch.

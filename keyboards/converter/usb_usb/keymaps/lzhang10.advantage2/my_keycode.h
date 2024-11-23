@@ -4,6 +4,7 @@
 
 #define CFQ_USE_SHIFT_QUOTES
 
+#define XXX KC_NO
 #define TRNS    KC_TRNS
 
 /* Available special keys that do not interfere with system setting
