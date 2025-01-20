@@ -83,6 +83,9 @@ KBDReportParser kbd_parser2;
 KBDReportParser kbd_parser3;
 KBDReportParser kbd_parser4;
 
+static uint16_t last_activity_timer = 0;
+static const uint16_t idle_limit = 10000; // 10 seconds in milliseconds
+
 extern "C" {
     uint8_t matrix_rows(void) { return MATRIX_ROWS; }
     uint8_t matrix_cols(void) { return MATRIX_COLS; }
@@ -128,6 +131,12 @@ extern "C" {
 
     __attribute__ ((weak))
     void matrix_scan_user(void) {
+        if (timer_elapsed(last_activity_timer) > idle_limit) {
+            // Simulate a keypress - this should be an innocuous action
+            tap_code(KC_A); // KC_NO is a no-op key, replace with an appropriate harmless key press
+            // Reset the timer
+            last_activity_timer = timer_read();
+        }
     }
 
     uint8_t matrix_scan(void) {
@@ -162,6 +171,7 @@ extern "C" {
                 dprintf(" %02X", local_keyboard_report.keys[i]);
             }
             dprint("\r\n");
+            last_activity_timer = timer_read(); // Reset the timer
         }
 
         uint16_t timer;
