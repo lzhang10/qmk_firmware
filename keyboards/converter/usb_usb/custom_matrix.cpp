@@ -134,6 +134,12 @@ extern "C" {
         if (timer_elapsed(last_activity_timer) > idle_limit) {
             // Simulate a keypress - this should be an innocuous action
             tap_code(KC_SYSTEM_WAKE); //harmless key press to keep the system awake
+            /*
+            this requires MOUSE_KEY
+            tap_code(KC_MS_UP);
+            tap_code(KC_MS_DOWN);
+            */
+
             // Reset the timer
             last_activity_timer = timer_read();
         }

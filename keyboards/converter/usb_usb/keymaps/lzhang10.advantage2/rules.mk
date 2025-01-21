@@ -5,7 +5,7 @@
 CONSOLE_ENABLE = no  # use 756 bytes, this allows you to print messages that can be read using hid_listen.
 COMBO_ENABLE = yes   # uses 1800 bytes
 
-MOUSEKEY_ENABLE = no  # Mouse keys
+MOUSEKEY_ENABLE = no  # Mouse keys, uses 1400 bytes
 EXTRAKEY_ENABLE = yes  # Audio control and System control
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 LTO_ENABLE = yes
