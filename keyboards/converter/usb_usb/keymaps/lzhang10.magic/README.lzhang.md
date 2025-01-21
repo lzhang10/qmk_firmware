@@ -1,4 +1,4 @@
-# Program
+# Program on Linux
 
 ```sh
 # build
@@ -6,6 +6,17 @@ util/docker_build.sh converter/usb_usb/leonardo:lzhang10.magic
 
 # build & flash
 util/docker_build.sh converter/usb_usb/leonardo:lzhang10.magic:flash
+```
+
+# Program on Mac
+
+Docker does not work for me on mac. Need toinstall native qmk cli then run:
+
+```sh
+# build
+qmk compile -kb converter/usb_usb/leonardo -km lzhang10.advantage2
+# flash
+qmk flash -kb converter/usb_usb/leonardo -km lzhang10.advantage2
 ```
 
 # old Apple Magic keyboard support

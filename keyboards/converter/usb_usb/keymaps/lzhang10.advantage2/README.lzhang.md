@@ -1,4 +1,4 @@
-# Program
+# Program on Linux
 
 First set secret in secret_var.h, this will not be committed to git
 ```sh
@@ -16,4 +16,13 @@ sleep 8 && avrdude -p atmega32u4 -c avr109 -P /dev/ttyACM0 -U flash:w:.build/con
 
 The above command can be found by adding "make VERBOSE=true" to the make command in util/docker_build.sh
 
-# TODO
+# Program on Mac
+
+Docker does not work for me on mac. Need toinstall native qmk cli then run:
+
+```sh
+# build
+qmk compile -kb converter/usb_usb/leonardo -km lzhang10.advantage2
+# flash
+qmk flash -kb converter/usb_usb/leonardo -km lzhang10.advantage2
+```
