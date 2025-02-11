@@ -14,7 +14,7 @@ Docker does not work for me on mac. Need toinstall native qmk cli then run:
 
 ```sh
 # build
-qmk compile -kb converter/usb_usb/leonardo -km lzhang10.advantage2
+qmk compile -kb converter/usb_usb/leonardo -km lzhang10.magic
 # flash
 qmk flash -kb converter/usb_usb/leonardo -km lzhang10.advantage2
 ```
