@@ -26,16 +26,6 @@
 #define O_LSFT OSM(MOD_LSFT)
 #define O_RSFT OSM(MOD_RSFT)
 
-// shortcut key to move windows around in Rectangle app for mac
-#define WIN_L LALT(LCMD(KC_LEFT))
-#define WIN_R LALT(LCMD(KC_RIGHT))
-#define WIN_U LALT(LCMD(KC_UP))
-#define WIN_D LALT(LCMD(KC_DOWN))
-
-// next/prev display
-#define DSP_N LALT(LCMD(LCTL(KC_RIGHT)))
-#define DSP_P LALT(LCMD(LCTL(KC_LEFT)))
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE] = LAYOUT_magic(

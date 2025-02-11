@@ -42,6 +42,16 @@
 #define MTRALT LALT_T(KC_L)   // Right ALT (ISO_Level3_Shift) can not trigger M-x for emacs
 #define MTRGUI RGUI_T(KC_MINS)
 
+// Rectangle app for mac: shortcut key to move windows around
+#define WIN_L LALT(LCMD(KC_LEFT))
+#define WIN_R LALT(LCMD(KC_RIGHT))
+#define WIN_U LALT(LCMD(KC_UP))
+#define WIN_D LALT(LCMD(KC_DOWN))
+
+// Rectangle app for mac: next/prev display
+#define DSP_N LALT(LCMD(LCTL(KC_RIGHT)))
+#define DSP_P LALT(LCMD(LCTL(KC_LEFT)))
+
 enum custom_keycodes {
   CTRL_ALT_DEL = SAFE_RANGE,
   CTRL_PGDN,
