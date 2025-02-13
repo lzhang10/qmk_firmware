@@ -34,7 +34,8 @@ KC_ESC,  U_WEB, M_CODE, U_WEB2, U_TERM, U_EMACS,   KC_F6,   KC_F7,   KC_F8,     
   ),
 
   [NAV] = LAYOUT_kinesis(
-CTRL_ALT_DEL,KC_INS,STR_B,STR_C,  TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS, XXX,  XXX,
+
+CTRL_ALT_DEL,KC_F1,KC_F2,KC_F3,  KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,      TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS, XXX,  XXX,
                           TRNS,   TMUX1,  TMUX2,  TMUX3,   TMUX4,   TMUX5,       TMUX6,   TMUX7,   TMUX8,   TMUX9,   TRNS,    TRNS,
                           TRNS,   TRNS,   M_CHAT, U_FILE,  U_WEB2,  U_TERM,      TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,   KC_COLN,KC_LALT,M_CODE,  U_WEB,   U_MAIL,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, TRNS,    TRNS,
