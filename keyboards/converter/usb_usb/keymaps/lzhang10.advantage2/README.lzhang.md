@@ -26,3 +26,14 @@ qmk compile -kb converter/usb_usb/leonardo -km lzhang10.advantage2
 # flash
 qmk flash -kb converter/usb_usb/leonardo -km lzhang10.advantage2
 ```
+
+
+# Update qmk
+
+```
+git remote add qmk https://github.com/qmk/qmk_firmware.git
+git checkout -b lzhang10.qmk-update
+git merge qmk/master
+# resolve all conflicts then build
+# 2025-02-13 qmk/master lzhang10.advantage2 fail to build due to firmware 222 bytes over.
+```
