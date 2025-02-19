@@ -40,7 +40,7 @@ CTRL_ALT_DEL,KC_F1,KC_F2,KC_F3,  KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,     
                           TRNS,   TRNS,   M_CHAT, U_FILE,  U_WEB2,  U_TERM,      TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,   KC_COLN,KC_LALT,M_CODE,  U_WEB,   U_MAIL,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, TRNS,    TRNS,
                           TRNS,   KC_GRV, TRNS,   TRNS,    TRNS,    U_EMACS,     TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
-                                  TRNS,   TRNS,   WIN_L,   WIN_R,                         KC_HOME, KC_END,  TRNS,    TRNS,
+                                  DSP_N,  DSP_P,  WIN_L,   WIN_R,                         KC_HOME, KC_END,  TRNS,    TRNS,
                                                            LALT(KC_F6),TRNS,     TRNS,    TRNS,
                                                                     TRNS,        TRNS,
                                                   KC_SPC,  TRNS,    KC_DEL,      TRNS,    TRNS,   TRNS
@@ -70,7 +70,7 @@ TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,     
   ),
 
   [FUN] = LAYOUT_kinesis(
-TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        KC_F21,  KC_F22,  WAKE_M32U,STR_A,   TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
+TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        STR_B,   KC_F22,  WAKE_M32U,STR_A,  TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F12, KC_F7,  KC_F8,   KC_F9,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
                           TRNS,     KC_F11, KC_F4,  KC_F5,   KC_F6,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,

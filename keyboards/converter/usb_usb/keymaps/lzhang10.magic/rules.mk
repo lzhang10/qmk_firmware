@@ -4,6 +4,7 @@ MOUSEKEY_ENABLE  = no  # Mouse keys
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 COMBO_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes # Auto Shift
 LTO_ENABLE = yes
 TAP_DANCE_ENABLE = yes # use 700 bytes
 

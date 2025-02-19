@@ -50,6 +50,13 @@
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 
+// Auto Shift
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_auto_shift.md
+// disable certain keys in get_auto_shifted_key()
+//#define NO_AUTO_SHIFT_ALPHA
+#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
+#define AUTO_SHIFT_NO_SETUP // disable three special keys to adjujst autoshift on the fly
+
 // Prevent normal rollover on alphas from accidentally triggering mods.
 //#define IGNORE_MOD_TAP_INTERRUPT
 
