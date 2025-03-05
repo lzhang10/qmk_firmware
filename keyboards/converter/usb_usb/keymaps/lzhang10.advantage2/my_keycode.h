@@ -47,6 +47,8 @@
 #define WIN_R LALT(LCMD(KC_RIGHT))
 #define WIN_U LALT(LCMD(KC_UP))
 #define WIN_D LALT(LCMD(KC_DOWN))
+#define WIN_M LALT(LCMD(KC_ENTER))  // maximize
+#define WIN_RST LALT(LCMD(KC_BACKSPACE))  // restore
 
 // Rectangle app for mac: next/prev display
 #define DSP_N LALT(LCMD(LCTL(KC_RIGHT)))
