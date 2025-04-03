@@ -103,6 +103,16 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTL(SS_LALT(SS_TAP(X_DELETE))));
     }
     break;
+  case CTRL_ALT:
+    if (record->event.pressed) {
+      register_code(KC_LCTL);
+      register_code(KC_LALT);
+    } else {
+      unregister_code(KC_LALT);
+      unregister_code(KC_LCTL);
+    }
+    return false;
+    break;
   case M_ARROW_RMINUS:  /* -> */
     if (record->event.pressed) {
       SEND_STRING("->");

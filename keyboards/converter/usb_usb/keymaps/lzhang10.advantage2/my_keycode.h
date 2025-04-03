@@ -56,6 +56,7 @@
 
 enum custom_keycodes {
   CTRL_ALT_DEL = SAFE_RANGE,
+  CTRL_ALT,
   CTRL_PGDN,
   CAPSWORD,
   NUMWORD,
