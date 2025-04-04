@@ -28,10 +28,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 APP_W,  U_WEB, M_CODE, U_WEB2, U_TERM, U_EMACS,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
                           KC_EQL, KC_1,   KC_2,    KC_3,    KC_4,     KC_5,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
                           KC_TAB, KC_Q,   KC_W,    KC_E,    KC_R,     KC_T,      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SCLN,
-                       KC_F13, MTLGUI, MTLALT,  MTLSFT,  MTLCTL,   KC_G,      KC_H,    MTRCTL,  MTRSFT,  MTRALT,  KC_MINS,  KC_QUOT,
+                           U_F14, MTLGUI, MTLALT,  MTLSFT,  MTLCTL,   KC_G,      KC_H,    MTRCTL,  MTRSFT,  MTRALT,  KC_MINS,  KC_QUOT,
                   OSM(MOD_LSFT),  KC_Z,   KC_X,    KC_C,    KC_V,     KC_B,      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSM(MOD_RSFT),
                                 KC_GRV, KC_BSLS,KC_LEFT, KC_RGHT,                         KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC,
-                                                    KC_TAB, TD(TD_CPY_CUT),      LSFT(KC_LGUI),    KC_F13,
+                                                    KC_TAB, TD(TD_CPY_CUT),      LSFT(KC_LGUI),    U_F14,
                                                                    C(KC_V),      KC_PGUP,
                                 KC_BSPC,  LT(NUM, KC_ESC),LT(FUN, KC_SCLN),      KC_PGDN, LT(SYM, KC_ENT),LT(NAV, KC_SPC)
   ),

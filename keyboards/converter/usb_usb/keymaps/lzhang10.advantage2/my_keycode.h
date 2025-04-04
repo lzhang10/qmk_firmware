@@ -8,7 +8,7 @@
 #define TRNS    KC_TRNS
 
 /* Available special keys that do not interfere with system setting
-  Mac:  F13         F16 F17 F18 F19
+  Mac:  F13 F14     F16 F17 F18 F19 F20
   Linux     F14 F15 F16 F17 F18     F20 F21 F22
   */
 #define U_F13   KC_F13 //Tools: open Gnome Settings
