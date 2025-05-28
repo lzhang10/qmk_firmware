@@ -16,7 +16,7 @@ Docker does not work for me on mac. Need toinstall native qmk cli then run:
 # build
 qmk compile -kb converter/usb_usb/leonardo -km lzhang10.magic
 # flash
-qmk flash -kb converter/usb_usb/leonardo -km lzhang10.advantage2
+qmk flash -kb converter/usb_usb/leonardo -km lzhang10.magic
 ```
 
 # old Apple Magic keyboard support
