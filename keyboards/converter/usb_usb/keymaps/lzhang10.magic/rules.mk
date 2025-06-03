@@ -1,6 +1,6 @@
 EXTRAKEY_ENABLE  = yes     # Audio control and System control
 #COMBO_ENABLE = yes
-MOUSEKEY_ENABLE  = no  # Mouse keys
+MOUSEKEY_ENABLE  = yes  # Mouse keys
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 COMBO_ENABLE = yes
