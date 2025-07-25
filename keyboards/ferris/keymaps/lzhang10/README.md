@@ -22,5 +22,6 @@ util/docker_build.sh ferris/sweep:lzhang10
 
 # build & flash
 util/docker_build.sh ferris/sweep:lzhang10:flash
-
 ```
+
+When prompted, use a screw driver or a tweezer to short GND and RST pins on the controller next to each other.
