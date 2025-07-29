@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // It makes sense to use the same delay for the mouseweel
 #define MOUSEKEY_WHEEL_DELAY 50
 // The default is 100
-#define MOUSEKEY_WHEEL_INTERVAL 50
+#define MOUSEKEY_WHEEL_INTERVAL 100
 // The default is 40
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 
