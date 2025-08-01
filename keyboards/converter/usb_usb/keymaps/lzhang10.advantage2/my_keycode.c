@@ -87,11 +87,6 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTL(SS_TAP(X_PGDN)));
     }
     break;
-#if 0
-  case REPEAT:
-    update_repeat_key(record);
-    return false;
-#endif
   case CANCEL:
     layer_off(NUM);
     /* layer_off(_LMOD); */
@@ -131,6 +126,19 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     }
     break;
+  case KC_BSPC:
+            if (record->event.pressed) {
+                // Check if shift is held
+                if (get_mods() & MOD_MASK_SHIFT) {
+                    // Clear shift, send delete, restore shift
+                    uint8_t mods = get_mods();
+                    clear_mods();
+                    tap_code(KC_DEL);
+                    set_mods(mods);
+                    return false; // Don't process KC_BSPC
+                }
+            }
+            break;
 
 #ifdef CFQ_USE_SHIFT_QUOTES
   case KC_LSFT:  /* '' */
