@@ -207,7 +207,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
-
   return res;
 }
 
@@ -231,79 +230,22 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   }
 }
 
-// This function is implemented in upstream but I can not use it due to firmware bloat after rebasing
-// use get_auto_shifted_key() below instead
-/*
-  bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-  switch(keycode) {
-  case KC_Q:
-  return true;
-  default:
-  return false;
-  }
-  }
-*/
-/*
-bool get_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-  // disable autoshift for certain vim keys
-  // note autoshift is disabled for modtap key automatically
-  switch (keycode) {
-  case KC_A:
-  case KC_S:
-  case KC_D:
-  case KC_F:
-  //case KC_U:
-  //case KC_I:
-  //case KC_O:
-  case KC_H:
-  case KC_J:
-  case KC_K:
-  case KC_L:
-  //case KC_M:
-    return false;
-  }
-
-  switch (keycode) {
-#    ifndef NO_AUTO_SHIFT_ALPHA
-  case KC_A ... KC_Z:
-#    endif
-#    ifndef NO_AUTO_SHIFT_NUMERIC
-  case KC_1 ... KC_0:
-#    endif
-#    ifndef NO_AUTO_SHIFT_SPECIAL
-  case KC_TAB:
-  case KC_MINUS ... KC_SLASH:
-  case KC_NONUS_BACKSLASH:
-#    endif
-    return true;
-  }
-  return false;
+// this function is needed to add homerow mod tap keys to Auto Shift with Retro Shift
+// https://docs.qmk.fm/features/auto_shift#auto-shift-per-key
+bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
+    switch(keycode) {
+        case MTLGUI:
+        case MTLALT:
+        case MTLSFT:
+        case MTLCTL:
+        case MTRCTL:
+        case MTRSFT:
+        case MTRALT:
+            return true;
+        default:
+            return false;
+    }
 }
-*/
-// Turn off TAPPING_FORCE_HOLD for certain dual function keys
-// to revert to the default auto-repeat behavior for tap-then-hold
-#if 0
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-  case LT(MEDIA, KC_BSPC):
-    return false;
-  default:
-    return true;
-  }
-}
-#endif
-
-#if 0
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-  case LSFT_T(KC_D):
-  case LSFT_T(KC_K):
-    return true;
-  default:
-    return false;
-  }
-}
-#endif
 
 #ifdef AUTO_SHIFT_TIMEOUT_PER_KEY
 // code only exists in upstream

@@ -50,9 +50,11 @@
 // #define AUTO_SHIFT_REPEAT // not that useful
 //#define AUTO_SHIFT_TIMEOUT_PER_KEY  // need to update to upstream, see get_autoshift_timeout()
 
+// This allows auto shift on homerow mod keys
+// https://docs.qmk.fm/features/auto_shift#retro-shift
 // this is supposed to send shifted letter for mod-tap keys after a time
 // I could not get it to work.
-//#define RETRO_SHIFT
+#define RETRO_SHIFT
 
 // allow certain mod-tap key to send the letter when released after TAPPING_TERM
 // pros: one can use a shorter TAPPING_TERM for those keys
@@ -74,4 +76,3 @@
 #define MOUSEKEY_MAX_SPEED      6
 #undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX    64
-
