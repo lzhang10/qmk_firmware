@@ -48,7 +48,6 @@
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 #define AUTO_SHIFT_NO_SETUP // disable three special keys to adjujst autoshift on the fly
 // #define AUTO_SHIFT_REPEAT // not that useful
-//#define AUTO_SHIFT_TIMEOUT_PER_KEY  // need to update to upstream, see get_autoshift_timeout()
 
 // This allows auto shift on homerow mod keys
 // https://docs.qmk.fm/features/auto_shift#retro-shift

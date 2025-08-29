@@ -212,19 +212,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  case MTLGUI:
-  case MTRGUI:
-    return TAPPING_TERM;
     // slow down ALT+key to avoid triggering accented letters on mac
   case MTLALT:
   case MTRALT:
-    return TAPPING_TERM + 50;
-  case MTLSFT:
-  case MTRSFT:
-    return TAPPING_TERM;
-  case MTLCTL:
-  case MTRCTL:
-    return TAPPING_TERM;
+    return TAPPING_TERM + 150;
   default:
     return TAPPING_TERM;
   }
