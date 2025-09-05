@@ -53,7 +53,7 @@
 // https://docs.qmk.fm/features/auto_shift#retro-shift
 // this is supposed to send shifted letter for mod-tap keys after a time
 // I could not get it to work.
-#define RETRO_SHIFT
+// #define RETRO_SHIFT
 
 // allow certain mod-tap key to send the letter when released after TAPPING_TERM
 // pros: one can use a shorter TAPPING_TERM for those keys
