@@ -212,9 +212,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // slow down ALT+key to avoid triggering accented letters on mac
-  case MTLALT:
-  case MTRALT:
+    // slow down certain keys to avoid triggering accented letters on mac
+  case SFT_L:
+  case SFT_S:
     return TAPPING_TERM + 150;
   default:
     return TAPPING_TERM;
@@ -225,13 +225,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // https://docs.qmk.fm/features/auto_shift#auto-shift-per-key
 bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
-        case MTLGUI:
-        case MTLALT:
-        case MTLSFT:
-        case MTLCTL:
-        case MTRCTL:
-        case MTRSFT:
-        case MTRALT:
+        case CMD_A:
+        case SFT_S:
+        case ALT_D:
+        case CTL_F:
+        case CTL_J:
+        case ALT_K:
+        case SFT_L:
+        case CMD_SC:
             return true;
         default:
             return false;

@@ -32,15 +32,17 @@
 // get_tapping_term()
 
 // standard setting for win/linux. Mac needs to swap control/command in OS.
-#define MTLCTL LCTL_T(KC_F)
-#define MTLSFT LSFT_T(KC_D)
-#define MTLALT LALT_T(KC_S)
-#define MTLGUI LGUI_T(KC_A)
+#define CMD_A LGUI_T(KC_A)
+#define SFT_S LSFT_T(KC_S)
+#define ALT_D LALT_T(KC_D)
+#define CTL_F LCTL_T(KC_F)
+#define CTL_J LCTL_T(KC_J)
+#define ALT_K LALT_T(KC_K)
+#define SFT_L LSFT_T(KC_L)
+#define CMD_SC LGUI_T(KC_SCLN)
+#define O_LSFT OSM(MOD_LSFT)
+#define O_RSFT OSM(MOD_RSFT)
 
-#define MTRCTL RCTL_T(KC_J)
-#define MTRSFT RSFT_T(KC_K)
-#define MTRALT LALT_T(KC_L)   // Right ALT (ISO_Level3_Shift) can not trigger M-x for emacs
-#define MTRGUI RGUI_T(KC_MINS)
 
 // Rectangle app for mac: shortcut key to move windows around
 #define WIN_L LALT(LCMD(KC_LEFT))
