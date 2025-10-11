@@ -40,6 +40,7 @@
 #define ALT_K LALT_T(KC_K)
 #define SFT_L LSFT_T(KC_L)
 #define CMD_SC LGUI_T(KC_SCLN)
+#define CMD_MINS LGUI_T(KC_MINS)
 #define O_LSFT OSM(MOD_LSFT)
 #define O_RSFT OSM(MOD_RSFT)
 
