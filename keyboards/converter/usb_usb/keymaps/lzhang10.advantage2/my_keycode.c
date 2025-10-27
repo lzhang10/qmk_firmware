@@ -213,8 +213,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     // slow down certain keys to avoid triggering accented letters on mac
-  case SFT_L:
-  case SFT_S:
+  case ALT_D:
+  case ALT_K:
     return TAPPING_TERM + 150;
   default:
     return TAPPING_TERM;
