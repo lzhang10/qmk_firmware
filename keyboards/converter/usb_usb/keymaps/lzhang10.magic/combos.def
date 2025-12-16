@@ -1,8 +1,13 @@
+COMB(coln,     KC_COLN,        SFT_S, KC_H)  // S + H -> :
+COMB(tilde,    KC_TILD,    KC_W, KC_E)       // W + E -> ~
+COMB(underscore, KC_UNDS,    ALT_D,   CTL_F) // D + F -> _
+
 // // Left top row
 // COMB(qu_comb,           QU,             SE_J, SE_C)
 // COMB(q_comb,            SE_Q,           SE_C, SE_Y)
 // COMB(z_comb,            SE_Z,           SE_Y, SE_F)
 // COMB(del,               KC_DEL,         SE_C, SE_Y, SE_F)
+
 // // Right top row
 // SUBS(el_str_int,        "#{}"SS_TAP(X_LEFT),  SE_X, SE_W)
 // COMB(eql,               SE_EQL,         SE_W, SE_U)
@@ -15,10 +20,9 @@
 // COMB(escape,            KC_ESC,         SE_T, SE_H)
 // COMB(dquo,              SE_DQUO,        SE_S, SE_H)
 // COMB(scln,              SE_SCLN,        SE_S, SE_T, SE_H)
-COMB(scln,              KC_SCLN,        KC_N, LGUI_T(KC_A))
+//COMB(scln,              KC_SCLN,        KC_N, LGUI_T(KC_A))
 
 // // Right home row
-COMB(coln,              KC_COLN,        LALT_T(KC_S), KC_H)
 // COMB(coln,              SE_COLN,        SE_N, SE_I)
 // COMB(enter,             KC_ENT,         SE_I, SE_A)
 // COMB(quot,              SE_QUOT,        SE_N, SE_A)

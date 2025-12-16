@@ -20,8 +20,7 @@
 #define PASTE C(KC_V)
 
 /*
-Left ALT is mapped to CTRL+ALT. This enables CTRL+ALT modifier for shortcuts:
-  - CTRL+ALT+left|right to switch between chrome tabs
+Left and right ALTs are mapped to MOUSE BUTTON 4 for easy mouse scrolling when pressed.
 */
 // switch between application window on Mac
 #define APP_W LCTL(KC_GRV)
