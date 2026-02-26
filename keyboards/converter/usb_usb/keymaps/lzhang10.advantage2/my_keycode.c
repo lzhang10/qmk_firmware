@@ -77,6 +77,14 @@ bool _process_record_user(uint16_t keycode, keyrecord_t *record) {
       send_user_string(STR_A);
     }
     return false;
+  case ALTAB_APP_W:
+    if (record->event.pressed) {
+      register_code(KC_LALT);
+      tap_code(KC_GRAVE);
+    } else {
+      unregister_code(KC_LALT);
+    }
+    return false;
   case NUM_G:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT("g"));

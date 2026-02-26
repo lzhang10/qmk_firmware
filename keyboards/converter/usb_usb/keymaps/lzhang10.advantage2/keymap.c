@@ -16,6 +16,7 @@
 
 // switch between application window on Mac
 #define APP_W LCTL(KC_GRV)
+// ALTAB_APP_W is a custom keycode defined in my_keycode.h
 
 // character stats: http://xahlee.info/comp/computer_language_char_distribution.html
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -25,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // unused special key codes: NUMWORD
 // old paste key: S(KC_INS)
-APP_W,  U_WEB, M_CODE, U_WEB2, U_TERM, U_EMACS,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
+ALTAB_APP_W,  U_WEB, M_CODE, U_WEB2, U_TERM, U_EMACS,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
                           KC_EQL, KC_1,   KC_2,   KC_3,    KC_4,    KC_5,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
                           KC_CAPS, KC_Q,  KC_W,   KC_E,    KC_R,    KC_T,      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SCLN,
                           KC_MS_BTN3, CMD_A,SFT_S,ALT_D,   CTL_F,   KC_G,      KC_H,    CTL_J,   ALT_K,   SFT_L,   CMD_MINS,  KC_QUOT,

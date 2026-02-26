@@ -75,6 +75,9 @@ enum custom_keycodes {
   TO_NUM,
   NUM_G, // shift G in num layer for vim navigation
   WAKE_M32U, // wake, sleep, wake to get rid of M32U coil whine
+  
+  // Mac AltTab app window switcher
+  ALTAB_APP_W, // Alt+` for switching app windows (single press only)
 
   // TMUX window switch
   TMUX1,
