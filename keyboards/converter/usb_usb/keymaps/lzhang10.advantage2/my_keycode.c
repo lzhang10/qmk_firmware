@@ -241,6 +241,7 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
         case ALT_K:
         case SFT_L:
         case CMD_SC:
+        case CMD_MINS:
             return true;
         default:
             return false;
