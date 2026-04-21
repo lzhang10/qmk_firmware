@@ -8,24 +8,34 @@
 #define TRNS    KC_TRNS
 
 /* Available special keys that do not interfere with system setting
-  Mac:  F13 F14     F16 F17 F18 F19 F20
-  Linux     F14 F15 F16 F17 F18     F20 F21 F22
-  */
-#define U_F13   KC_F13 //Tools: open Gnome Settings
-#define M_CHAT  KC_F13
-#define U_F14   KC_F14
-#define U_EMACS KC_F16
-#define U_FILE  KC_F15 // XF86Launch6
-#define U_WTERM KC_F16
-#define U_WEB   KC_F17
-#define U_WEB2  LSFT(KC_F17)
+ * Common (Mac/Linux): F14 F16 F17 F18 F20
+ * Need to disable builtin keyboard shortcut on mac
+ *  Decrease brightness: F14
+ * Mac-only:           F13 F19
+ * Linux-only:         F15 F21 F22
+ */
+// Common (Mac/Linux)
+// Double the use case via LSFT
+#define U_WEB   KC_F14
+#define U_WEB2  LSFT(KC_F14)
+#define U_CODE  KC_F16
+#define U_CODE2 LSFT(KC_F16)
+#define U_TERM  KC_F17
+#define U_EMACS LSFT(KC_F17)
 #define U_MAIL  KC_F18
-#define U_F19   KC_F19 // NoSymbol
-#define U_TERM  KC_F20
-#define M_TERM  KC_F19 // Mac version
-#define U_CODE  KC_F21 // XF86TouchpadToggle
-#define M_CODE  LSFT(KC_F13) // MAC version
-#define U_F22   KC_F22 // XF86TouchpadOn
+#define U_FILE  LSFT(KC_F18)
+#define U_CHAT  KC_F20
+
+// Mac-only
+//#define U_F13 KC_F13 // Tools: open Gnome Settings
+//#define M_CHAT  KC_F19
+//#define M_TERM  KC_F19 // Mac version
+//#define M_CODE  LSFT(KC_F13) // MAC version
+
+// Linux-only
+//#define U_FILE  KC_F15 // XF86Launch6
+//#define U_CODE  KC_F21 // XF86TouchpadToggle
+//#define U_F22   KC_F22 // XF86TouchpadOn
 
 // after changing modtap keys below you may want to review & tweak
 // get_auto_shifted_key()
@@ -75,7 +85,7 @@ enum custom_keycodes {
   TO_NUM,
   NUM_G, // shift G in num layer for vim navigation
   WAKE_M32U, // wake, sleep, wake to get rid of M32U coil whine
-  
+
   // Mac AltTab app window switcher
   ALTAB_APP_W, // Alt+` for switching app windows (single press only)
 
