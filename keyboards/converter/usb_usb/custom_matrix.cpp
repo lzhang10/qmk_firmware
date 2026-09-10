@@ -35,6 +35,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "host.h"
 #include "keyboard.h"
 
+#include "action.h" // tap_code()
+
 /* KEY CODE to Matrix
  *
  * HID keycode(1 byte):
@@ -78,6 +80,12 @@ KBDReportParser kbd_parser1;
 KBDReportParser kbd_parser2;
 KBDReportParser kbd_parser3;
 KBDReportParser kbd_parser4;
+
+// Idle keepalive: wake the host periodically when no input has been seen.
+// Note: must be 32-bit - a 9m30s interval (570000 ms) does not fit in
+// uint16_t (it would truncate to 45712 ms, i.e. ~45.7 s).
+static uint32_t last_activity_timer = 0;
+static const uint32_t idle_limit = 570000; // 9m 30 seconds in milliseconds
 
 extern "C" {
     uint8_t matrix_rows(void) { return MATRIX_ROWS; }
@@ -124,6 +132,18 @@ extern "C" {
 
     __attribute__ ((weak))
     void matrix_scan_user(void) {
+        if (timer_elapsed32(last_activity_timer) > idle_limit) {
+            // Simulate a keypress - this should be an innocuous action
+            tap_code(KC_SYSTEM_WAKE); // harmless key press to keep the system awake
+            /*
+            this requires MOUSE_KEY
+            tap_code(KC_MS_UP);
+            tap_code(KC_MS_DOWN);
+            */
+
+            // Reset the timer
+            last_activity_timer = timer_read32();
+        }
     }
 
     uint8_t matrix_scan(void) {
@@ -158,6 +178,8 @@ extern "C" {
                 dprintf(" %02X", local_keyboard_report.keys[i]);
             }
             dprint("\r\n");
+            // Reset the activity timer when we have any input
+            last_activity_timer = timer_read32();
         }
 
         uint16_t timer;
