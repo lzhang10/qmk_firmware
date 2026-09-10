@@ -1,0 +1,8 @@
+// Symbols
+COMB(coln,       KC_COLN,    KC_W, CTL_F) // W + F -> :
+COMB(underscore, KC_UNDS,  KC_G, KC_H) // G + H -> _
+
+// Editing keys
+COMB(fj_esc,     KC_ESC,   CTL_F, CTL_J) // F + J -> Esc
+COMB(dk_enter,   KC_ENT,   ALT_D, ALT_K) // D + K -> Enter
+COMB(sl_bspc,    KC_BSPC,  SFT_S, SFT_L) // S + L -> Backspace
