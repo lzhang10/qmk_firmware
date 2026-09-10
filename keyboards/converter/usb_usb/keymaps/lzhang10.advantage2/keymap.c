@@ -1,0 +1,215 @@
+// -*- truncate-lines: t; -*-
+#include "manna-harbour_miryoku.h"
+#include "layout.h"
+
+#include "my_keycode.h"
+
+#ifdef COMBO_ENABLE
+// qmk doc
+// (https://github.com/qmk/qmk_firmware/blob/master/docs/feature_combo.md#combos)
+// states to put combo in keymap.c. It does not work if put in my_keycode.c
+// (https://github.com/qmk/qmk_firmware/issues/21137)
+#include "g/keymap_combo.h"
+#endif
+
+#include "tapdance.h"
+
+// switch between application window on Mac
+#define APP_W LCTL(KC_GRV)
+// ALTAB_APP_W is a custom keycode defined in my_keycode.h
+
+// character stats: http://xahlee.info/comp/computer_language_char_distribution.html
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  [BASE] = LAYOUT_kinesis(
+// ^: KC_CIRC
+// invert number row: KC_EQL, KC_EXLM,KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_0,    KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_SCLN,
+
+// unused special key codes: NUMWORD
+// MS_BTN5: mouse button 5 to trigger mouse scrolling on mac for logitech marble trackball
+ALTAB_APP_W,  U_WEB, U_CODE, U_CODE2, U_WEB2, U_FILE,   KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12, KC_MUTE, KC_VOLD, KC_VOLU,  XXX,  XXX,
+                          KC_EQL, KC_1,   KC_2,   KC_3,    KC_4,    KC_5,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
+                          KC_CAPS, KC_Q,  KC_W,   KC_E,    KC_R,    KC_T,      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_SCLN,
+                          MS_BTN3, CMD_A,SFT_S,ALT_D,   CTL_F,   KC_G,      KC_H,    CTL_J,   ALT_K,   SFT_L,   CMD_MINS,KC_QUOT,
+                       O_LSFT,  KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, O_RSFT,
+                                KC_GRV, KC_BSLS,KC_LEFT, KC_RGHT,                       KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC,
+                                                    KC_TAB, TD(TD_CPY_CUT),      LSFT(KC_LGUI),  MS_BTN5,
+                                                                   C(KC_V),      KC_PGUP,
+                                KC_BSPC,  LT(NUM, KC_ESC),LT(FUN, KC_SCLN),      KC_PGDN, LT(SYM, KC_ENT),LT(NAV, KC_SPC)
+  ),
+
+  [NAV] = LAYOUT_kinesis(
+
+CTRL_ALT_DEL,KC_F1,KC_F2,KC_F3,  KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,      TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS, XXX,  XXX,
+                          TRNS,   TMUX1,  TMUX2,  TMUX3,   TMUX4,   TMUX5,       TMUX6,   TMUX7,   TMUX8,   TMUX9,   TRNS,    TRNS,
+                          TRNS,   TRNS,   U_CHAT, TRNS,    U_WEB2,  U_TERM,      TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,   KC_COLN,KC_LALT,U_CODE,  U_WEB,   U_MAIL,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, TRNS,    TRNS,
+                          TRNS,   KC_GRV, TRNS,   TRNS,    TRNS,    U_EMACS,     TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                                  WIN_M, WIN_RST, WIN_L,   WIN_R,                         KC_HOME, KC_END,  TRNS,    TRNS,
+                                                           LALT(KC_F6),TRNS,     TRNS,    TRNS,
+                                                                    TRNS,        TRNS,
+                                                  KC_SPC,  TRNS,    KC_DEL,      TRNS,    TRNS,   TRNS
+  ),
+
+  [NUM] = LAYOUT_kinesis(
+TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS,   XXX,  XXX,
+                        KC_EQL,     KC_1,   KC_2,   KC_3,    KC_4,    KC_5,        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS,
+                          TRNS,     TRNS,   TRNS,   KC_K,    KC_PERC, KC_J,        TRNS,    TRNS,    KC_DOT,  CAPSWORD,KC_QUOT, TRNS,
+                          TRNS,     KC_6,   KC_4,   KC_0,    KC_2,    TRNS,        KC_EQL,  KC_3,    KC_1,    KC_5,    KC_7,    TRNS,
+                          TRNS,     TRNS,   TRNS,  NUM_G,    KC_8,    TRNS,        KC_PIPE, KC_9,    TRNS,    KC_DOT,  TRNS, TRNS,
+                                    TRNS,   TRNS,   TRNS,    TRNS,                          TRNS,    TRNS,    TRNS,    TRNS,
+                                                             TRNS,    TRNS,        TRNS,    TRNS,
+                                                                      TRNS,        KC_HOME,
+                                                    TRNS,    TRNS,    TRNS,        KC_END,  TRNS,   TRNS
+),
+  [SYM] = LAYOUT_kinesis(
+TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS,   XXX,  XXX,
+                          TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_LCBR,KC_AMPR,KC_ASTR, KC_LPRN, KC_RCBR,     M_ARROW_RMINUS,TRNS,TRNS,  TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_COLN,KC_DLR, KC_PERC, KC_CIRC, KC_PLUS,     M_ARROW_REQL,TRNS,TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_TILD,KC_EXLM,KC_AT,   KC_HASH, KC_PIPE,     M_ARROW_RMINUS_BRACES,TRNS,TRNS,    TRNS,    TRNS,    TRNS,
+                                    TRNS,   TRNS,   DSP_P,   DSP_N,                          TRNS,    TRNS,    TRNS,    TRNS,
+                                                             TRNS,    TRNS,        TRNS,    TRNS,
+                                                                      TRNS,        TRNS,
+                                                    TRNS,    TRNS,    TRNS,        TRNS,    TRNS,   TRNS
+  ),
+
+  [FUN] = LAYOUT_kinesis(
+TRNS,    KC_F13,   KC_F14,KC_F15,   KC_F16, KC_F17,KC_F18,   KC_F19,KC_F20,        STR_B,   KC_F22,  WAKE_M32U,STR_A,  TRNS,    KC_BRID,  KC_BRIU, XXX,  XXX,
+                          TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_F12, KC_F7,  KC_F8,   KC_F9,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_F11, KC_F4,  KC_F5,   KC_F6,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                          TRNS,     KC_F10, KC_F1,  KC_F2,   KC_F3,   TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,
+                                    TRNS,   TRNS,   TRNS,    TRNS,                          TRNS,    TRNS,    TRNS,    TRNS,
+                                                             TRNS,    TRNS,        TRNS,    TRNS,
+                                                                      TRNS,        TRNS,
+                                                    TRNS,    TRNS,    TRNS,        TRNS,    TRNS,   TRNS
+  ),
+
+  // MOUSE layer can be disabled to save space:
+  // MOUSEKEY_ENABLE = no in rules.mk
+  [MOUSE] = LAYOUT_miryoku(
+    U_NA,    U_NA,    U_NA,    U_NA,    U_NA,    U_RDO,   U_PST,   U_CPY,   U_CUT,   U_UND,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, U_NA,    MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, U_NU,
+    U_NA,    KC_ALGR, U_NA,    U_NA,    U_NA,    MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR, U_NU,
+    U_NP,    U_NP,    U_NA,    U_NA,    U_NA,    MS_BTN1, MS_BTN2, MS_BTN3, U_NP,    U_NP
+  ),
+
+  // MEDIA layer can be disabled to save space:
+  // EXTRAKEY_ENABLE = no in rules.mk
+  [MEDIA] = LAYOUT_miryoku(
+    U_NA,    U_NA,    U_NA,    U_NA,    U_NA,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, U_NA,    KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U_NU,
+    U_NA,    KC_ALGR, U_NA,    U_NA,    U_NA,    U_NU,    U_NU,    U_NU,    U_NU,    U_NU,
+    U_NP,    U_NP,    U_NA,    U_NA,    U_NA,    KC_MSTP, KC_MPLY, KC_MUTE, U_NP,    U_NP
+  ),
+
+  [MBO] = LAYOUT_miryoku(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_TRNS, KC_TRNS, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
+    U_RDO,   U_PST,   U_CPY,   U_CUT,   U_UND,   U_RDO,   U_PST,   U_CPY,   U_CUT,   U_UND,
+    U_NP,    U_NP,    MS_BTN2, MS_BTN3, MS_BTN1, MS_BTN1, MS_BTN3, MS_BTN2, U_NP,    U_NP
+  ),
+
+};
+
+/*   [BASE] = LAYOUT_kinesis( */
+/* U_NA,  U_NA,  U_NA,   U_NA,   U_NA,   U_NA,   U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA,    U_NA,    U_NA,   U_NA, U_NA,  XXX,  XXX, */
+/*               U_NA,   U_NA,   U_NA,   U_NA,   U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA,    U_NA,    U_NA, */
+/*               U_NA,   U_NA,   U_NA,   U_NA,   U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA,    U_NA,    U_NA, */
+/*               U_NA,   U_NA,   U_NA,   U_NA,   U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA,    U_NA,    U_NA, */
+/*               U_NA,   U_NA,   U_NA,   U_NA,   U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA,    U_NA,    U_NA, */
+/*                               U_NA,   U_NA,   U_NA,   U_NA,                          U_NA,   U_NA,    U_NA,    U_NA, */
+/*                                                       U_NA,    U_NA,        U_NA,    U_NA, */
+/*                                                                U_NA,        U_NA, */
+/*                                               U_NA,   U_NA,    U_NA,        U_NA,    U_NA,   U_NA */
+/*   ), */
+/*   [TRNS] = LAYOUT_kinesis( */
+/* TRNS,    TRNS,   TRNS,    TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,   TRNS,   XXX,  XXX, */
+/*                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS, */
+/*                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS, */
+/*                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS, */
+/*                           TRNS,     TRNS,   TRNS,   TRNS,    TRNS,    TRNS,        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS, */
+/*                                     TRNS,   TRNS,   TRNS,    TRNS,                          TRNS,    TRNS,    TRNS,    TRNS, */
+/*                                                              TRNS,    TRNS,        TRNS,    TRNS, */
+/*                                                                       TRNS,        TRNS, */
+/*                                                     TRNS,    TRNS,    TRNS,        TRNS,    TRNS,   TRNS */
+/*   ), */
+/*   [Kinesis default] = LAYOUT_kinesis( */
+/* KC_ESC,  KC_F1,  KC_F2,   KC_F3,    KC_F4,  KC_F5,  KC_F6,   KC_F7,   KC_F8,      KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR, KC_SLCK, KC_PAUS,  XXX,  XXX, */
+/*                           KC_EQL,   KC_1,   KC_2,   KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, */
+/*                           KC_TAB,   KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, */
+/*                           KC_CAPS,  KC_A,   KC_S,   KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, */
+/*                           KC_LSFT,  KC_Z,   KC_X,   KC_C,    KC_V,    KC_B,       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, */
+/*                                     KC_GRV, XXX,    KC_LEFT, KC_RGHT,                      KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC, */
+/*                                                              KC_LCTL, KC_LALT,    KC_RGUI, KC_RCTL, */
+/*                                                                       KC_HOME,    KC_PGUP, */
+/*                                                     KC_BSPC, KC_DEL,  KC_END,     KC_PGDN, KC_ENT, KC_SPC */
+/*   ), */
+
+#ifdef COMBO_ENABLE
+// Combos
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+  switch (index) {
+    // Home-row and other tight combos
+    /* case tab: */
+    /* case escape: */
+  //case scln:
+    //case dquo:
+  //case coln:
+    /* case enter: */
+    /* case quot: */
+    /* case circ: */
+    /* case dlr: */
+    /* case vsp: */
+    //return COMBO_TERM;
+    // Vertical combos, very relaxed
+    /* case small_left_arrow: */
+    /* case lt_eq: */
+    /* case large_right_arrow: */
+    /* case small_right_arrow: */
+    /* case pipe_to: */
+    /* case sp: */
+    /* case gt_eq: */
+    /*     return COMBO_TERM + 55; */
+    // Regular combos, slightly relaxed
+  default:
+    return COMBO_TERM + 25;
+  }
+}
+
+bool get_combo_must_tap(uint16_t index, combo_t *combo) {
+  switch (index) {
+    /* case del: */
+    /* case backsp: */
+    /* case q_comb: */
+    /* case qu_comb: */
+    /* case z_comb: */
+    /* case num: */
+    /* case sp_ampr: */
+    /* case sp_pipe: */
+    /* case sp_plus: */
+    /* case sp_astr: */
+    /* case sp_mins: */
+    /* case sp_perc: */
+    /* case sp_grv: */
+    /* case sp_labk: */
+    /* case sp_rabk: */
+    /* case sp_lcbr: */
+    /* case sp_bsls: */
+    /* case sp_hash: */
+    /* case rev_rep: */
+    /* case lprn_arng: */
+    /* case rprn_adia: */
+    /* case unds_odia: */
+    /* case eql: */
+    /*     return false; */
+  default:
+    return true;
+  }
+}
+
+/* bool combo_should_trigger(uint16_t combo_index, combo_t *combo) { */
+/*     // FIXME this doesn't seem to work? */
+/*     return true; */
+/* } */
+#endif
