@@ -82,10 +82,10 @@ KBDReportParser kbd_parser3;
 KBDReportParser kbd_parser4;
 
 // Idle keepalive: wake the host periodically when no input has been seen.
-// Note: must be 32-bit - a 9m30s interval (570000 ms) does not fit in
+// Note: must be 32-bit - a 4m30s interval (270000 ms) does not fit in
 // uint16_t (it would truncate to 45712 ms, i.e. ~45.7 s).
 static uint32_t last_activity_timer = 0;
-static const uint32_t idle_limit = 570000; // 9m 30 seconds in milliseconds
+static const uint32_t idle_limit = 270000; // 4m 30 seconds in milliseconds
 
 extern "C" {
     uint8_t matrix_rows(void) { return MATRIX_ROWS; }
