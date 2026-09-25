@@ -56,12 +56,12 @@
 
 
 // Rectangle app for mac: shortcut key to move windows around
-#define WIN_L LALT(LCMD(KC_LEFT))
-#define WIN_R LALT(LCMD(KC_RGHT))
-#define WIN_U LALT(LCMD(KC_UP))
-#define WIN_D LALT(LCMD(KC_DOWN))
-#define WIN_M LALT(LCMD(KC_ENTER))  // maximize
-#define WIN_RST LALT(LCMD(KC_BACKSPACE))  // restore
+#define WIN_L LALT(LCTL(KC_LEFT))
+#define WIN_R LALT(LCTL(KC_RGHT))
+#define WIN_U LALT(LCTL(KC_UP))
+#define WIN_D LALT(LCTL(KC_DOWN))
+#define WIN_M LALT(LCTL(KC_ENTER))  // maximize
+#define WIN_RST LALT(LCTL(KC_BACKSPACE))  // restore
 
 // Rectangle app for mac: next/prev display
 #define DSP_N LALT(LCMD(LCTL(KC_RGHT)))
